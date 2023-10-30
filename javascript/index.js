@@ -125,11 +125,32 @@ async function makeBroccoli() {
 
     let response7 = await obtainInstruction("broccoli", 6);
     document.querySelector("#broccoli").innerHTML += `<li>${response7}</li>`;
-  } catch(err) {
-    console.log(err)
+  } catch (err) {
+    console.log(err);
   }
 }
 
-makeBroccoli()
+makeBroccoli();
 // Bonus 2 - Promise all
 // ...
+Promise.allSettled([
+  obtainInstruction("brusselsSprouts", 0),
+  obtainInstruction("brusselsSprouts", 1),
+  obtainInstruction("brusselsSprouts", 2),
+  obtainInstruction("brusselsSprouts", 3),
+  obtainInstruction("brusselsSprouts", 4),
+  obtainInstruction("brusselsSprouts", 5),
+  obtainInstruction("brusselsSprouts", 6),
+  obtainInstruction("brusselsSprouts", 7),
+])
+  .then((response) => {
+    console.log(response);
+    response.forEach((each) => {
+      document.querySelector(
+        "#brusselsSprouts"
+      ).innerHTML += `<li>${each.value}</li>`;
+    });
+  })
+  .catch((error) => {
+    console.log(error);
+  });
