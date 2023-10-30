@@ -50,14 +50,16 @@ getInstruction("mashedPotatoes", 0, (step1) => {
 
 
 
-
-
-
-
-
-
 // Iteration 2 - using promises
 // ...
+obtainInstruction('steak', 0)
+  .then( (step0) => {
+    document.querySelector("#steak").innerHTML += `<li>${step0}</li>`
+    //  ... Your code here
+  })
+  // ... Your code here
+
+
 
 // Iteration 3 using async/await
 // ...
