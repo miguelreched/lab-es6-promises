@@ -94,6 +94,7 @@ obtainInstruction("steak", 0)
   })
   .then((step8) => {
     document.querySelector("#steak").innerHTML += `<li>${step8}</li>`;
+    document.querySelector("#steakImg").removeAttribute("hidden");
   })
   .catch((error) => {
     console.log(error);
@@ -125,6 +126,7 @@ async function makeBroccoli() {
 
     let response7 = await obtainInstruction("broccoli", 6);
     document.querySelector("#broccoli").innerHTML += `<li>${response7}</li>`;
+    document.querySelector("#broccoliImg").removeAttribute("hidden");
   } catch (err) {
     console.log(err);
   }
@@ -150,6 +152,7 @@ Promise.allSettled([
         "#brusselsSprouts"
       ).innerHTML += `<li>${each.value}</li>`;
     });
+    document.querySelector("#brusselsSproutsImg").removeAttribute("hidden");
   })
   .catch((error) => {
     console.log(error);
