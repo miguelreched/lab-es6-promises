@@ -118,6 +118,7 @@ obtainInstruction("steak", 0)
   .then((step8) => {
     document.querySelector("#steak").innerHTML += `<li>${step8}</li>`;
     document.querySelector("#steakImg").removeAttribute("hidden");
+    document.querySelector("#steak").innerHTML += `<li>Stake is ready!</li>`;
   })
   .catch((error) => {
     console.log(error);
